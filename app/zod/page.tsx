@@ -20,7 +20,7 @@ export default function ZodPage() {
       name: z.string().min(2, "이름은 최소 2자 이상이어야 합니다"),
       email: z.string().email("올바른 이메일 형식이 아닙니다"),
       age: z
-        .number({ required_error: "나이를 입력해주세요" })
+        .number({ error: "나이를 입력해주세요" })
         .min(18, "나이는 18세 이상이어야 합니다")
         .max(100, "나이는 100세 이하여야 합니다"),
       password: z
@@ -43,12 +43,12 @@ export default function ZodPage() {
         ...formData,
         age: formData.age ? Number(formData.age) : undefined,
       });
-      setValidationResult(
-        `✅ 검증 성공!\n${JSON.stringify(parsed, null, 2)}`
-      );
+      setValidationResult(`✅ 검증 성공!\n${JSON.stringify(parsed, null, 2)}`);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const errors = error.errors.map((err) => `${err.path.join(".")}: ${err.message}`).join("\n");
+        const errors = error.issues
+          .map((err) => `${err.path.join(".")}: ${err.message}`)
+          .join("\n");
         setValidationResult(`❌ 검증 실패:\n${errors}`);
       }
     }
@@ -77,22 +77,26 @@ export default function ZodPage() {
           </h2>
           <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
             <p>
-              <strong className="text-black dark:text-white">Zod</strong>은 TypeScript-first 스키마 검증
-              라이브러리로, 타입 안전성을 보장합니다.
+              <strong className="text-black dark:text-white">Zod</strong>은
+              TypeScript-first 스키마 검증 라이브러리로, 타입 안전성을
+              보장합니다.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>타입 추론:</strong> 스키마로부터 TypeScript 타입을 자동으로 추론합니다.
+                <strong>타입 추론:</strong> 스키마로부터 TypeScript 타입을
+                자동으로 추론합니다.
               </li>
               <li>
-                <strong>런타임 검증:</strong> 컴파일 타임과 런타임 모두에서 타입 안전성을 보장합니다.
+                <strong>런타임 검증:</strong> 컴파일 타임과 런타임 모두에서 타입
+                안전성을 보장합니다.
               </li>
               <li>
-                <strong>체이닝 API:</strong> 메서드 체이닝을 통해 직관적으로 검증 규칙을 작성합니다.
+                <strong>체이닝 API:</strong> 메서드 체이닝을 통해 직관적으로
+                검증 규칙을 작성합니다.
               </li>
               <li>
-                <strong>고급 검증:</strong> refine(), superRefine()을 통해 복잡한 검증 로직을 구현할 수
-                있습니다.
+                <strong>고급 검증:</strong> refine(), superRefine()을 통해
+                복잡한 검증 로직을 구현할 수 있습니다.
               </li>
             </ul>
           </div>
@@ -281,4 +285,3 @@ z.string().pipe(z.coerce.number());`}</code>
     </div>
   );
 }
-

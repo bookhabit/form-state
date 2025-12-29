@@ -81,21 +81,25 @@ export default function YupPage() {
           </h2>
           <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
             <p>
-              <strong className="text-black dark:text-white">Yup</strong>은 JavaScript/TypeScript를 위한
-              스키마 검증 라이브러리입니다.
+              <strong className="text-black dark:text-white">Yup</strong>은
+              JavaScript/TypeScript를 위한 스키마 검증 라이브러리입니다.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>스키마 기반:</strong> 객체 스키마를 정의하여 데이터 구조와 검증 규칙을 명시합니다.
+                <strong>스키마 기반:</strong> 객체 스키마를 정의하여 데이터
+                구조와 검증 규칙을 명시합니다.
               </li>
               <li>
-                <strong>체이닝 API:</strong> 메서드 체이닝을 통해 직관적으로 검증 규칙을 작성합니다.
+                <strong>체이닝 API:</strong> 메서드 체이닝을 통해 직관적으로
+                검증 규칙을 작성합니다.
               </li>
               <li>
-                <strong>비동기 검증:</strong> Promise 기반으로 비동기 검증을 지원합니다.
+                <strong>비동기 검증:</strong> Promise 기반으로 비동기 검증을
+                지원합니다.
               </li>
               <li>
-                <strong>커스텀 검증:</strong> test() 메서드를 통해 커스텀 검증 로직을 추가할 수 있습니다.
+                <strong>커스텀 검증:</strong> test() 메서드를 통해 커스텀 검증
+                로직을 추가할 수 있습니다.
               </li>
             </ul>
           </div>
@@ -275,4 +279,3 @@ yup.string().test("custom", "커스텀 메시지", (value) => {
     </div>
   );
 }
-

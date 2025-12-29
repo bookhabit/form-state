@@ -64,22 +64,28 @@ export default function FormikPage() {
           <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
             <p>
               <strong className="text-black dark:text-white">Formik</strong>은
-              <strong className="text-green-600 dark:text-green-400"> controlled components</strong>를
-              사용하여 form 상태를 관리합니다.
+              <strong className="text-green-600 dark:text-green-400">
+                {" "}
+                controlled components
+              </strong>
+              를 사용하여 form 상태를 관리합니다.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>State 관리:</strong> 모든 form 값을 내부 state로 관리합니다.
+                <strong>State 관리:</strong> 모든 form 값을 내부 state로
+                관리합니다.
               </li>
               <li>
-                <strong>Helper 함수:</strong> handleChange, handleBlur, handleSubmit 등의 helper 함수를
-                제공합니다.
+                <strong>Helper 함수:</strong> handleChange, handleBlur,
+                handleSubmit 등의 helper 함수를 제공합니다.
               </li>
               <li>
-                <strong>Validation:</strong> Yup 스키마를 통한 검증을 지원합니다.
+                <strong>Validation:</strong> Yup 스키마를 통한 검증을
+                지원합니다.
               </li>
               <li>
-                <strong>Form State:</strong> values, errors, touched, isSubmitting 등의 상태를 제공합니다.
+                <strong>Form State:</strong> values, errors, touched,
+                isSubmitting 등의 상태를 제공합니다.
               </li>
             </ul>
           </div>
@@ -169,7 +175,9 @@ const formik = useFormik({
                 placeholder="이름을 입력하세요"
               />
               {formik.touched.name && formik.errors.name && (
-                <p className="mt-1 text-sm text-red-500">{formik.errors.name}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {formik.errors.name}
+                </p>
               )}
             </div>
 
@@ -187,7 +195,9 @@ const formik = useFormik({
                 placeholder="email@example.com"
               />
               {formik.touched.email && formik.errors.email && (
-                <p className="mt-1 text-sm text-red-500">{formik.errors.email}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {formik.errors.email}
+                </p>
               )}
             </div>
 
@@ -245,4 +255,3 @@ const formik = useFormik({
     </div>
   );
 }
-
