@@ -9,6 +9,12 @@ export default function Home() {
       color: "bg-gradient-to-br from-blue-500 to-purple-600",
     },
     {
+      title: "순수 React",
+      description: "라이브러리 없이 React만으로 form 상태 관리",
+      href: "/vanilla-react",
+      color: "bg-gradient-to-br from-gray-600 to-gray-800",
+    },
+    {
       title: "React Hook Form",
       description: "성능 최적화된 form 상태 관리 라이브러리",
       href: "/react-hook-form",
