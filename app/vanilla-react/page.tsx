@@ -175,32 +175,40 @@ export default function VanillaReactPage() {
           </h2>
           <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
             <p>
-              <strong className="text-black dark:text-white">순수 React</strong>만을 사용하여 form 상태를
-              관리하는 방법입니다. 외부 라이브러리 없이 React의 기본 훅만 사용합니다.
+              <strong className="text-black dark:text-white">순수 React</strong>
+              만을 사용하여 form 상태를 관리하는 방법입니다. 외부 라이브러리
+              없이 React의 기본 훅만 사용합니다.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>useState:</strong> 각 입력 필드의 값을 state로 관리합니다.
+                <strong>useState:</strong> 각 입력 필드의 값을 state로
+                관리합니다.
               </li>
               <li>
-                <strong>수동 이벤트 핸들링:</strong> onChange, onBlur 이벤트를 직접 처리합니다.
+                <strong>수동 이벤트 핸들링:</strong> onChange, onBlur 이벤트를
+                직접 처리합니다.
               </li>
               <li>
-                <strong>수동 유효성 검사:</strong> 검증 로직을 직접 작성하고 실행합니다.
+                <strong>수동 유효성 검사:</strong> 검증 로직을 직접 작성하고
+                실행합니다.
               </li>
               <li>
-                <strong>에러 상태 관리:</strong> 에러 메시지를 별도의 state로 관리합니다.
+                <strong>에러 상태 관리:</strong> 에러 메시지를 별도의 state로
+                관리합니다.
               </li>
               <li>
-                <strong>touched 상태:</strong> 필드 방문 여부를 추적하여 UX를 개선합니다.
+                <strong>touched 상태:</strong> 필드 방문 여부를 추적하여 UX를
+                개선합니다.
               </li>
             </ul>
             <div className="mt-4 p-4 bg-yellow-100 dark:bg-yellow-900/30 rounded-md">
               <p className="text-sm">
-                <strong>장점:</strong> 외부 의존성 없음, 완전한 제어, 작은 번들 사이즈
+                <strong>장점:</strong> 외부 의존성 없음, 완전한 제어, 작은 번들
+                사이즈
               </p>
               <p className="text-sm mt-2">
-                <strong>단점:</strong> 많은 보일러플레이트 코드, 반복적인 검증 로직 작성 필요
+                <strong>단점:</strong> 많은 보일러플레이트 코드, 반복적인 검증
+                로직 작성 필요
               </p>
             </div>
           </div>
@@ -444,4 +452,3 @@ const handleBlur = (e: ChangeEvent<HTMLInputElement>) => {
     </div>
   );
 }
-

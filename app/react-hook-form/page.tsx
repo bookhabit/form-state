@@ -16,7 +16,9 @@ const exampleSchema = z.object({
 type ExampleFormData = z.infer<typeof exampleSchema>;
 
 export default function ReactHookFormPage() {
-  const [submittedData, setSubmittedData] = useState<ExampleFormData | null>(null);
+  const [submittedData, setSubmittedData] = useState<ExampleFormData | null>(
+    null
+  );
 
   const {
     register,
@@ -57,23 +59,32 @@ export default function ReactHookFormPage() {
           </h2>
           <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
             <p>
-              <strong className="text-black dark:text-white">React Hook Form</strong>은
-              <strong className="text-blue-600 dark:text-blue-400"> uncontrolled components</strong>를
-              사용하여 성능을 최적화합니다.
+              <strong className="text-black dark:text-white">
+                React Hook Form
+              </strong>
+              은
+              <strong className="text-blue-600 dark:text-blue-400">
+                {" "}
+                uncontrolled components
+              </strong>
+              를 사용하여 성능을 최적화합니다.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>
-                <strong>Ref 기반 접근:</strong> DOM ref를 통해 직접 값에 접근하여 불필요한 리렌더링을
-                방지합니다.
+                <strong>Ref 기반 접근:</strong> DOM ref를 통해 직접 값에
+                접근하여 불필요한 리렌더링을 방지합니다.
               </li>
               <li>
-                <strong>Register 함수:</strong> 각 input을 register하여 form과 연결합니다.
+                <strong>Register 함수:</strong> 각 input을 register하여 form과
+                연결합니다.
               </li>
               <li>
-                <strong>Validation:</strong> resolver를 통해 Zod, Yup 등의 검증 라이브러리와 통합합니다.
+                <strong>Validation:</strong> resolver를 통해 Zod, Yup 등의 검증
+                라이브러리와 통합합니다.
               </li>
               <li>
-                <strong>Form State:</strong> errors, isSubmitting, isValid 등의 상태를 제공합니다.
+                <strong>Form State:</strong> errors, isSubmitting, isValid 등의
+                상태를 제공합니다.
               </li>
             </ul>
           </div>
@@ -154,7 +165,9 @@ const { register, handleSubmit } = useForm({
                 placeholder="이름을 입력하세요"
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.name.message}
+                </p>
               )}
             </div>
 
@@ -169,7 +182,9 @@ const { register, handleSubmit } = useForm({
                 placeholder="email@example.com"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.email.message}
+                </p>
               )}
             </div>
 
@@ -184,7 +199,9 @@ const { register, handleSubmit } = useForm({
                 placeholder="18 이상"
               />
               {errors.age && (
-                <p className="mt-1 text-sm text-red-500">{errors.age.message}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.age.message}
+                </p>
               )}
             </div>
 
@@ -224,4 +241,3 @@ const { register, handleSubmit } = useForm({
     </div>
   );
 }
-
